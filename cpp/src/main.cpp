@@ -1,5 +1,5 @@
 #include <iostream>
-#include "br.data.structure.linkedlist/LinkedList.cpp"
+#include "lists/linked/LinkedList.cpp"
 
 using namespace std;
 
