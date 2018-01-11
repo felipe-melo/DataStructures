@@ -11,7 +11,7 @@ void DoubleLinkedList<T>::add(T element) {
 
     DoubleLinkedListNode<T> *temp = new DoubleLinkedListNode<T>(element);
     temp->next = NULL;
-    temp->next = this->tail;
+    temp->previous = this->tail;
 
     if (this->head == NULL) {
         this->size = 0;
@@ -26,20 +26,25 @@ void DoubleLinkedList<T>::add(T element) {
 template<class T>
 T *DoubleLinkedList<T>::remove(int index) {
     if (index < 0 || index >= this->size)
-        return NULL:
+        return NULL;
 
-    int start, end;
-
-    if (this->size/2 >= index) {
-        start = 0;
-        end = this->size/2;
-    } else {
-        start = this->size/2;
-        end = this->size;
-    }
     LinkedListNode<T> *temp = this->head;
-    while()
-    return NULL;
+    LinkedListNode<T> *aux;
+
+    if (index == 0) {
+        this->head = this->head->next;
+        this->size--;
+        return temp;
+    }
+    
+    for(int i = 0; i < index-1; i++) {
+        temp = temp->next;
+    }
+
+    aux = temp->next;
+    temp->next = temp->next->next;
+    this->size--;
+    return aux;
 }
 
 template<class T>

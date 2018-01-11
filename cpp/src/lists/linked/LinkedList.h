@@ -1,5 +1,5 @@
-#include "LinkedListNode.cpp"
 #include "../list.h"
+#include "LinkedListNode.cpp"
 
 template <class T>
 class LinkedList: public List<T> {
@@ -8,7 +8,7 @@ class LinkedList: public List<T> {
     LinkedListNode<T> *head, *tail;
         LinkedList();
         void add(T);
-        T *remove(int);
+        LinkedListNode<T> *remove(int);
         int getSize();
 
 };
